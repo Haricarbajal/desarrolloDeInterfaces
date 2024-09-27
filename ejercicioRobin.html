@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #menu li {
+            margin-right: 10px;
+        }
+
+        #menu li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #menu li a:hover {
+            color: #ff0000;
+        }
+
+        .container {
+            justify-content: center;
+            box-shadow: 0 0 16px #1e1e1e;
+            height: 30px;
+        }
+
+        main {
+            display: grid;
+            grid-template-areas: "topbar" "content";
+            height: 100vh;
+            grid-template-columns: 1fr;
+            grid-template-rows: 60px 1fr;
+        }
+
+        nav {
+            grid-area: topbar;
+        }
+
+        article {
+            grid-area: content;
+        }
+
+        header,
+        nav,
+        footer {
+            background-color: #ffffff;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1024px) {
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul id="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <article>
+            <div class=gallery>
+                <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.W65e6yHYVkJPaQKo3NJ_QQHaEo%26pid%3DApi&f=1&ipt=c9625b817cdcb0356de93913865d7c148277d9353d31a0b6d45e573327d9485a&ipo=images"
+                    alt=""><img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.W65e6yHYVkJPaQKo3NJ_QQHaEo%26pid%3DApi&f=1&ipt=c9625b817cdcb0356de93913865d7c148277d9353d31a0b6d45e573327d9485a&ipo=images"
+                    alt=""><img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.W65e6yHYVkJPaQKo3NJ_QQHaEo%26pid%3DApi&f=1&ipt=c9625b817cdcb0356de93913865d7c148277d9353d31a0b6d45e573327d9485a&ipo=images"
+                    alt=""><img
+                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.W65e6yHYVkJPaQKo3NJ_QQHaEo%26pid%3DApi&f=1&ipt=c9625b817cdcb0356de93913865d7c148277d9353d31a0b6d45e573327d9485a&ipo=images"
+                    alt="">
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>
