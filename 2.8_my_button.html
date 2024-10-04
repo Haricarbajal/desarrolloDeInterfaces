@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍑 My Button</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+
+        .flex{
+            display: flex;
+            gap: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <button id="button1">button1</button>
+        <button id="button2">button2</button>
+    </div>
+
+    <script>
+        const botoncito1 = document.getElementById("button1")
+        botoncito1.addEventListener("click", function(){
+            document.body.style.backgroundColor = "#FFA07A";
+        })
+
+        const botoncito2 = document.getElementById("button2")
+        botoncito2.addEventListener("mouseover", function(){
+            document.body.style.backgroundColor = "#ffffff";
+        })
+
+
+    </script>
+    
+</body>
+</html>

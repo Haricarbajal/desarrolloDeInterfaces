@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Areas and Flexbox</title>
+    <style>
+        /* Reset body margin */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Grid Layout */
+        main {
+            display: grid;
+            grid-template-areas: 
+                "topbar topbar topbar" 
+                "sidebar content content" 
+                "footer footer footer";
+            height: 100vh;
+            grid-template-columns: 200px 1fr 1fr;
+            grid-template-rows: 60px 1fr 60px;
+        }
+
+        header { grid-area: topbar; }
+        nav { grid-area: sidebar; }
+        article { grid-area: content; }
+        footer { grid-area: footer; }
+
+        header, nav, footer {
+            background-color: #87ceeb;
+            padding: 10px;
+        }
+
+        /* Flexbox Layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 0 16px #1e1e1e;
+            padding: 10px;
+        }
+
+        .item {
+            height: 60px;
+            margin: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item:first-child {
+            flex: auto;
+            justify-content: start;
+        }
+
+        .link-pretty {
+            text-decoration: none;
+            color: black;
+        }
+
+        .link-pretty:hover {
+            text-decoration: underline;
+        }
+
+        .menu {
+            width: 24px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>            
+                <div class="item">
+                    <img src="https://static-cse.canva.com/blob/951789/1250logotiposqueteinspiraran.png" style="width: auto; height: 50px;">
+                </div>
+                <div class="item">
+                    <a class="link-pretty" href="https://google.es" target="_blank">Item 2</a>
+                </div>
+                <div class="item">
+                    <a class="link-pretty" href="https://google.es" target="_blank">
+                        <img class="menu" src="https://www.svgrepo.com/show/509298/align-right.svg">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <nav>Sidebar</nav>
+        <article>Content</article>
+        <footer>Footer</footer>
+    </main>        
+</body>
+</html>
