@@ -51,6 +51,7 @@
 
         .menu {
             margin: auto;
+            margin-left: 90px;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -58,7 +59,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             height: 45px;
-            width: 440px;
+            width: 600px;
             margin-right: 32.5%;
         }
 
@@ -74,39 +75,37 @@
         .logo .opcion {
             margin-top: 45px;
             margin-right: 39px;
-            background-color: none;
-            border: none;
+            width: 210px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         #boton1 {
-            background: none;
-            border: none;
+            width: 210px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;            
+            font-size: 16px;            
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
-
-        /* .desplegar {
-            display: grid;
-            place-items: center;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.1);
-            right: 2rem;
-            top: 60px;
-            width: 150px;
-            height: 150px;
-            border-radius: 8%;
-            backdrop-filter: blur(20px);
-        }
-
-        .desplegar li {
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .desplegar li a {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            color: #F2F2F7;
-        } */
 
         .galeria-contenedor {
             display: grid;
@@ -127,6 +126,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: border-radius 0.3s ease, width 0.3s ease, height 0.3s ease; /* Mantén la transición aquí */
         }
 
         .item-galeria:nth-child(6) {
@@ -159,12 +159,13 @@
             grid-auto-rows: auto;
             padding: 20px;
             grid-gap: 10px;
-            width: auto;
+            width: auto;            
         }
 
         .nuevo-estilo {
             border-radius: 50%;
             aspect-ratio: 1;
+            transition: border-radius 0.3s ease, width 0.3s ease, height 0.3s ease;
         }
     </style>
 </head>
@@ -180,15 +181,14 @@
             <li><a href="Sobre_nosotros">Sobre Nosotros</a></li>
             <li><a href="Contacto">Contacto</a></li>
         </div>
-        <button id="boton1" class="opcion"><img src="https://cdn-icons-png.flaticon.com/128/2499/2499129.png"
-                alt=""></button>
-        <button id="boton2" class="opcion"><img src="img/botno.png" alt=""></button>
+        <button id="boton1" class="opcion">Efécto Circulo</button>
+        <button id="boton2" class="opcion">Efecto grid 3</button>
     </div>
 
     <!-- <main>
         <section> -->
     <div class="galeria-contenedor">
-        <div class="item-galeria"><img src="img/appleLogo.jpg" alt="" class="imagen-galeria primeraImagen"></div>
+        <div class="item-galeria"><img src="img/appleLogo.jpg" alt="" class="imagen-galeria"></div>
         <div class="item-galeria"><img src="img/asus.jpg" alt="" class="imagen-galeria"></div>
         <div class="item-galeria"><img src="img/coche.jpg" alt="" class="imagen-galeria"></div>
         <div class="item-galeria"><img src="img/ghost-rider.jpg" alt="" class="imagen-galeria"></div>
@@ -215,15 +215,17 @@
             const estiloGrid = document.querySelector(".galeria-contenedor");
             estiloGrid.classList.toggle("nueva-galeria-contenedor")
         })
-        
+
         const obtenerImagenAleatoria = () => {
             const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
             return `img/${imagenes[indiceAleatorio]}`;
         };
-        const botonImagen = document.querySelector(".imagen-galeria")
-        botonImagen.addEventListener("click", function () {
-            botonImagen.src = obtenerImagenAleatoria();
-        })
+        const botonImagens = document.querySelectorAll(".imagen-galeria")
+        botonImagens.forEach(imagen => {
+            imagen.addEventListener("click", function () {
+                imagen.src = obtenerImagenAleatoria();
+            })
+        });
 
         const imagenes = [
             "pikachu.jpg",
@@ -232,7 +234,7 @@
             "background.png",
             "shakuna.png"
         ];
-                    
+
 
 
     </script>
