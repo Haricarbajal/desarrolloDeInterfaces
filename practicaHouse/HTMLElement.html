@@ -1,0 +1,19 @@
+<html>
+    <custom-element></custom-element>
+    <script>
+        class CustomElement extends HTMLElement{
+            constructor(){
+                super();
+                this.innerHTML = '<button>boton</button>';
+            }
+
+            connectedCallback(){
+                this.querySelector('button').addEventListener('click', () => {
+                    alert('boton presionado');
+                });
+            }
+        }
+
+        customElements.define('custom-element', CustomElement);
+    </script>
+</html>

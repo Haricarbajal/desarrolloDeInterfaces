@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Dialog</title>
+</head>
+<body>
+    <custom-dialog>
+        <button class="dialog-btn">Open</button>
+        <dialog>
+            <button class="close-btn">X</button>
+            <h1>Dialog</h1>
+            <p>This is a dialog</p>
+        </dialog>
+    </custom-dialog>
+
+    <letras-color>
+        <h1 class="nombre">MICHIRU</h1>
+    </letras-color>
+
+    <style>
+        dialog {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+
+    </style>
+
+    <script>
+        class CustomDialog extends HTMLElement{
+            constructor() {
+                super();
+            }
+
+            submit(event){
+                event.preventD
+            }
+
+            connectedCallback() {
+                // Referencias a los elementos del componente
+                const dialog = this.querySelector('dialog');
+                const openButton = this.querySelector('.dialog-btn');
+                const closeButton = this.querySelector('.close-btn');
+
+                // Abre el diálogo al hacer clic en el botón "Open"
+                openButton.addEventListener('click', () => {
+                    dialog.showModal();
+                });
+
+                // Cierra el diálogo al hacer clic en el botón "X"
+                closeButton.addEventListener('click', () => {
+                    dialog.close();
+                });
+
+                //TODO dispacthchEvent
+                
+
+
+
+            }
+
+
+
+        }
+
+
+        class LetrasColor extends HTMLElement{
+            constructor(){
+                super();
+            }
+
+
+            connectedCallback(){
+                const nombre = this.querySelector(".nombre");
+
+                nombre.addEventListener('click', () =>{
+                    if(nombre.style.color == "black"){
+                        nombre.style.color = "blue";
+                    }else{
+                        nombre.style.color = "black";
+                    }
+                });
+                
+            }
+        }
+
+
+        customElements.define("letras-color", LetrasColor);
+        // Define el elemento personalizado
+        customElements.define("custom-dialog", CustomDialog);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <custom-div>
+        <label for="search">Buscar</label>
+        <input type="search" id="gsearch" name="q">
+    </custom-div>
+
+
+    <script>
+        class CustomDiv extends HTMLElement{
+            constructor(){
+                super();
+            }
+
+            connectedCallback(){
+                const search = this.querySelector("#gsearch")
+                search.addEventListener("input", (event) => {
+                    this.recogerInput(event);
+                });
+
+                
+            }
+            
+            recogerInput(event){
+                event.preventDefault();
+                const referenciaInput = this.querySelector("#gsearch");
+                const valorEnVivo = referenciaInput.value
+                console.log({valorEnVivo});
+            }
+        }
+
+        customElements.define("custom-div", CustomDiv);
+    </script>
+</html> 

@@ -1,0 +1,38 @@
+<html>
+<custom-div>
+    <div>
+        <button class="boton-mostrar-frutas">boton</button>
+    </div>
+    <dialog>
+        <button class="boton-cerrar">X</button>
+        <h1>Manazana, Pera, Naranja, Lima, Sandía</h1>
+    </dialog>
+</custom-div>
+
+<script>
+    class ContenedorDeElementos extends HTMLElement {
+
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+
+            const botonMostrarFrutas = this.querySelector('.boton-mostrar-frutas');
+            const arrayFrutas = this.querySelector('dialog');
+            const botonCerrar = this.querySelector('.boton-cerrar');
+
+            botonMostrarFrutas.addEventListener('click', () => {
+                arrayFrutas.showModal();
+            });
+
+            botonCerrar.addEventListener('click' , () =>{
+                arrayFrutas.close();
+            })
+        }   
+    }
+
+    customElements.define("custom-div", ContenedorDeElementos);
+</script>
+
+</html>
